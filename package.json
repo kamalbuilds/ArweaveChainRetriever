@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ar-gql": "^1.2.2"
+    "ar-gql": "^1.2.2",
+    "arweavekit": "^1.4.8"
   }
 }

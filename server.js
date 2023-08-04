@@ -12,7 +12,6 @@ let gatewayIndex = 0;
 // Method to cycle through available gateways
 function nextGateway() {
   gatewayIndex = (gatewayIndex + 1) % gateways.length;
-  return gateways[gatewayIndex];
 }
 
 // Handling request with rate limit
@@ -21,12 +20,14 @@ async function runQuery(query, variables) {
 
   while (true) {
     try {
+      console.log(`Running query on gateway [${gatewayIndex}]`);
       result = await gateways[gatewayIndex].run(query, variables);
       break;
     } catch (error) {
-      if (error.message.includes("rate limit")) {
+      // Check the actual error message for your use case.
+      if (error) {
+        console.log("Switching to the next gateway due to rate limit.", error);
         nextGateway();
-        console.log("Switching to the next gateway due to rate limit.");
       } else {
         throw error;
       }
@@ -36,6 +37,7 @@ async function runQuery(query, variables) {
   return result;
 }
 
+
 async function fetchAllTransactions() {
     let transactions = []
     let cursor = ''
@@ -44,8 +46,8 @@ async function fetchAllTransactions() {
         let result = await runQuery(`
             query($cursor: String) {
                 transactions(first: 100, after: $cursor) {
-                    cursor
                     edges {
+                        cursor
                         node {
                             id
                             owner {
