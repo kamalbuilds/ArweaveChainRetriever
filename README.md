@@ -1,9 +1,9 @@
 # ArweaveChainRetriever
 
-🔗 ***Connecting You to the Whole Weave***
+🔗 ***Connecting You to the Whole Arweave***
 
 ### **Description:**
-ArweaveChainRetriever is an innovative script designed to unlock the full potential of the Arweave blockchain by allowing users to pull the entire dataset from an Arweave gateway. It's crafted for those who seek comprehensive access to the weave without the complexity of storing the entire chain.
+ArweaveChainRetriever is an innovative script designed to unlock the full potential of the Arweave blockchain by allowing users to pull the entire dataset from Arweave gateways.Since each gateway has rate limitations on the number of Queries that can be made. Hence the script is designed to adapt and it jumps to other gateway to fetch rest data. It's crafted for those who seek comprehensive access to the weave without the complexity of storing the entire chain.
 
 ### How to run
 

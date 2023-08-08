@@ -53,7 +53,7 @@ async function fetchAllTransactions() {
     let allTransactions = [];
 
     // Open a write stream
-    let file = fs.createWriteStream('itr5.txt');
+    let file = fs.createWriteStream('results.json');
 
     while (true) {
         // Query transactions
