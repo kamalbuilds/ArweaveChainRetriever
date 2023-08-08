@@ -79,6 +79,13 @@ async function fetchAllTransactions() {
             }
         }
 
+        if (result.status === 504) {
+            console.log("Error fetching transactions as result:", result);
+            console.log("Switching gateway due to 504 status...");
+            nextGateway();
+            continue; // Continue to the next iteration by switching to new gateway
+        }
+
         // Check if transactions were returned
         if (result && result.data.length > 0) {
             let transactions = result.data.map(edge => edge.node);
@@ -100,7 +107,7 @@ async function fetchAllTransactions() {
             }
         } else {
             // Log potential errors
-            console.log('Error fetching transactions:', result);
+            console.log('Error fetching transactions as result:', result);
             break;
         }
     }
