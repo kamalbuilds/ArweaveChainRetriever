@@ -30,3 +30,15 @@ ArweaveChainRetriever is more than a mere utility; it's a gateway to endless pos
 ⛩️ Gateways
 Gateways allow users to view content on the permaweb. Users gain access to files rendered locally by pointing to a transaction id. Gateways not only enable the storage of static files but also allow entire web applications to function.
 In most of the cases, gateways expose a GraphQL interface for querying the tags linked to Arweave transactions. This allows developers to store content of their applications in Arweave transactions and build entire web applications on blockchain.
+
+Results from the script
+
+First we query from arweave.net gateway
+
+![image](https://github.com/kamalbuilds/ArweaveChainRetriever/assets/95926324/018aa478-03d0-4fed-b913-66b2f1710b1e)
+
+After fetching 2200 transactions from this gateway , It gets a timeout error and then switches to a new gateway `arweave.dev` .
+
+![image](https://github.com/kamalbuilds/ArweaveChainRetriever/assets/95926324/dcfcf9c1-f42b-4d76-bc97-885f36d55419)
+
+And the script goes on and on untill it fetches the whole Arweave transactions.
